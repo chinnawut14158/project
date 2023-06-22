@@ -84,8 +84,8 @@ function Home() {
           console.log(collapsed, type);
         }}
       > */}
-        <div className="demo-logo-vertical" />
-        {/* <Menu
+      <div className="demo-logo-vertical" />
+      {/* <Menu
           theme="dark"
           mode="inline"
           defaultSelectedKeys={['2']}
@@ -159,173 +159,203 @@ function Home() {
               style={{
                 maxWidth: '90%',
               }}
-              initialValues={{
-                remember: true,
-              }} onFinish={onUserSubmit}>
+              onFinish={onUserSubmit}>
               <Row>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item label='ประเภทลูกค้า' 
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเลือกประเภทลูกค้า!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ประเภทลูกค้า'
+                    name='customer_type'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเลือกประเภทลูกค้า!',
+                        },
+                      ]}>
                       <Input name='customer_type' placeholder='กรอกข้อมูล' value={addUser.customer_type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ประเภทสินค้า'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเลือกประเภทสินค้า!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ประเภทสินค้า'
+                    name='product_type'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเลือกประเภทสินค้า!',
+                        },
+                      ]}>
                       <Input name='product_type' placeholder='กรอกข้อมูล' value={addUser.product_type} onChange={onValueChange} />
 
                     </Form.Item>
-                    <Form.Item label='ยี่ห้อ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเลือกยี่ห้อ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ยี่ห้อ'
+                    name='brand'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเลือกยี่ห้อ!',
+                        },
+                      ]}>
                       <Input name='brand' placeholder='กรอกข้อมูล' value={addUser.brand} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='รุ่น'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเลือกรุ่น!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='รุ่น'
+                    name='model'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเลือกรุ่น!',
+                        },
+                      ]}>
                       <Input name='model' placeholder='กรอกข้อมูล' value={addUser.model} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ปีที่ผลิต'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกปีที่ผลิต!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ปีที่ผลิต'
+                    name='year'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกปีที่ผลิต!',
+                        },
+                      ]}>
                       <Input name='year' placeholder='กรอกข้อมูล' value={addUser.year} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ราคารถ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกราคารถ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ราคารถ'
+                    name='car_price'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกราคารถ!',
+                        },
+                      ]}>
                       <Input name='car_price' placeholder='กรอกข้อมูล' value={addUser.car_price} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='เลขทะเบียน'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกหมายเลขทะเบียน!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='เลขทะเบียน'
+                    name='license_plate'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกหมายเลขทะเบียน!',
+                        },
+                      ]}>
                       <Input name='license_plate' placeholder='กรอกข้อมูล' value={addUser.license_plate} onChange={onValueChange} />
                     </Form.Item>
                     <Form.Item label='ตัวอย่างรถ'>
                       <Button type='primary' onClick={() => { modal.info(config); }}>ดู</Button>
                     </Form.Item>
-                    <Form.Item label='เพิ่มรูปภาพ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเพิ่มรูปภาพ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='เพิ่มรูปภาพ'
+                    name='img'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเพิ่มรูปภาพ!',
+                        },
+                      ]}>
                       <Input name='img' placeholder='กรอกข้อมูล' value={addUser.img} onChange={onValueChange} type='file' />
                     </Form.Item>
                   </div>
                 </Col>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item label='ประเภท'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดเลือกประเภท!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ประเภท'
+                    name='type'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดเลือกประเภท!',
+                        },
+                      ]}>
                       <Input name='type' placeholder='กรอกข้อมูล' value={addUser.type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ชื่อลูกค้า'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกชื่อลูกค้า!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ชื่อลูกค้า'
+                    name='customer_name'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกชื่อลูกค้า!',
+                        },
+                      ]}>
                       <Input name='customer_name' placeholder='กรอกข้อมูล' value={addUser.customer_name} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ยอดที่ต้องการ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกยอดที่ต้องการ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ยอดที่ต้องการ'
+                    name='balance'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกยอดที่ต้องการ!',
+                        },
+                      ]}>
                       <Input name='balance' placeholder='กรอกข้อมูล' value={addUser.balance} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='เลทรถ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกเลทรถ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='เลทรถ'
+                    name='rate'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกเลทรถ!',
+                        },
+                      ]}>
                       <Input name='rate' placeholder='กรอกข้อมูล' value={addUser.rate} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ยอดกู้สุทธิ'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกยอดกู้สุทธิ!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ยอดกู้สุทธิ'
+                    name='loan_amount'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกยอดกู้สุทธิ!',
+                        },
+                      ]}>
                       <Input name='loan_amount' placeholder='กรอกข้อมูล' value={addUser.loan_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='จำนวนผ่อน'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกจำนวนผ่อน!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='จำนวนผ่อน'
+                    name='installment_amount'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกจำนวนผ่อน!',
+                        },
+                      ]}>
                       <Input name='installment_amount' placeholder='กรอกข้อมูล' value={addUser.installment_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ดอกเบี้ยรวม'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกดอกเบี้ยรวม!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ดอกเบี้ยรวม'
+                    name='total_interest'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกดอกเบี้ยรวม!',
+                        },
+                      ]}>
                       <Input name='total_interest' placeholder='กรอกข้อมูล' value={addUser.total_interest} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ผ่อนรวมดอกเบี้ย'
-                    rules={[
-                      {
-                        required: true,
-                        message: 'โปรดกรอกผ่อนรวมดอกเบี้ย!',
-                      },
-                    ]}>
+                    <Form.Item 
+                    label='ผ่อนรวมดอกเบี้ย'
+                    name='installment_with_interest'
+                      rules={[
+                        {
+                          required: true,
+                          message: 'โปรดกรอกผ่อนรวมดอกเบี้ย!',
+                        },
+                      ]}>
                       <Input name='installment_with_interest' placeholder='กรอกข้อมูล' value={addUser.installment_with_interest} onChange={onValueChange} />
                     </Form.Item>
                   </div>
                 </Col>
               </Row>
-              
+
               <div style={{
                 // textAlign: 'center',
                 margin: '0px 0px 0px 130px',
               }}>
-                <Row style={{textAlign: 'center'}}>
+                <Row style={{ textAlign: 'center' }}>
                   <Col span={8}></Col>
                   <Col span={8}>
                     <Space>
@@ -344,9 +374,9 @@ function Home() {
           </div>
         </Content>
         <div style={{ textAlign: 'center' }}>
-                <Button type='primary' size="large" shape='circle' style={{ marginRight: '50%' }} ><ArrowLeftOutlined /></Button>
-                <Button type='primary' size="large" shape='circle' style={{ marginLeft: '40%' }} ><ArrowRightOutlined /></Button>
-              </div>
+          <Button type='primary' size="large" shape='circle' style={{ marginRight: '50%' }} ><ArrowLeftOutlined /></Button>
+          <Button type='primary' size="large" shape='circle' style={{ marginLeft: '40%' }} ><ArrowRightOutlined /></Button>
+        </div>
         <Footer
           style={{
             textAlign: 'center',

@@ -165,59 +165,161 @@ function Home() {
               <Row>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item label='ประเภทลูกค้า'>
+                    <Form.Item label='ประเภทลูกค้า' 
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='customer_type' placeholder='customer_type' value={addUser.customer_type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ประเภทสินค้า'>
+                    <Form.Item label='ประเภทสินค้า'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='product_type' placeholder='product_type' value={addUser.product_type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ยี่ห้อ'>
+                    <Form.Item label='ยี่ห้อ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='brand' placeholder='brand' value={addUser.brand} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='รุ่น'>
+                    <Form.Item label='รุ่น'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='model' placeholder='model' value={addUser.model} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ปีที่ผลิต'>
+                    <Form.Item label='ปีที่ผลิต'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='year' placeholder='year' value={addUser.year} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ราคารถ'>
+                    <Form.Item label='ราคารถ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='car_price' placeholder='car_price' value={addUser.car_price} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='เลขทะเบียน'>
+                    <Form.Item label='เลขทะเบียน'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='license_plate' placeholder='license_plate' value={addUser.license_plate} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ตัวอย่างรถ'>
+                    <Form.Item label='ตัวอย่างรถ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Button type='primary' onClick={() => { modal.info(config); }}>ดู</Button>
                     </Form.Item>
-                    <Form.Item label='เพิ่มรูปภาพ'>
+                    <Form.Item label='เพิ่มรูปภาพ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='img' placeholder='img' value={addUser.img} onChange={onValueChange} type='file' />
                     </Form.Item>
                   </div>
                 </Col>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item label='ประเภท'>
+                    <Form.Item label='ประเภท'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='type' placeholder='type' value={addUser.type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ชื่อลูกค้า'>
+                    <Form.Item label='ชื่อลูกค้า'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='customer_name' placeholder='customer_name' value={addUser.customer_name} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ยอดที่ต้องการ'>
+                    <Form.Item label='ยอดที่ต้องการ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='balance' placeholder='balance' value={addUser.balance} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='เลทรถ'>
+                    <Form.Item label='เลทรถ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='rate' placeholder='rate' value={addUser.rate} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ยอดกู้สุทธิ'>
+                    <Form.Item label='ยอดกู้สุทธิ'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='loan_amount' placeholder='loan_amount' value={addUser.loan_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='จำนวนผ่อน'>
+                    <Form.Item label='จำนวนผ่อน'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='installment_amount' placeholder='installment_amount' value={addUser.installment_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ดอกเบี้ยรวม'>
+                    <Form.Item label='ดอกเบี้ยรวม'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='total_interest' placeholder='total_interest' value={addUser.total_interest} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item label='ผ่อนรวมดอกเบี้ย'>
+                    <Form.Item label='ผ่อนรวมดอกเบี้ย'
+                    rules={[
+                      {
+                        required: true,
+                        message: 'โปรดเลือกประเภทลูกค้า!',
+                      },
+                    ]}>
                       <Input name='installment_with_interest' placeholder='installment_with_interest' value={addUser.installment_with_interest} onChange={onValueChange} />
                     </Form.Item>
                   </div>

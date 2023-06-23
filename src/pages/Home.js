@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
-import { PlusOutlined, FileTextFilled, ReconciliationFilled, ArrowLeftOutlined, ArrowRightOutlined, SaveFilled, CloseSquareFilled, HomeFilled } from '@ant-design/icons';
+import { PlusOutlined, ArrowLeftOutlined, ArrowRightOutlined, SaveFilled, CloseSquareFilled, HomeFilled } from '@ant-design/icons';
 import { Form, Input, Layout, Menu, Steps, theme, Col, Row, Select, Button, Space, Modal, Image } from 'antd';
 
 const config = {
@@ -43,7 +43,7 @@ function Home() {
 
   const [allUser, setAllUser] = useState([]);
 
-  const [editUser, setEditUser] = useState(null);
+  // const [editUser, setEditUser] = useState(null);
 
   let navigate = useNavigate()
 
@@ -163,20 +163,23 @@ function Home() {
               <Row>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item 
-                    label='ประเภทลูกค้า'
-                    name='customer_type'
+                    <Form.Item
+                      label='ประเภทลูกค้า'
+                      name='customer_type'
                       rules={[
                         {
                           required: true,
                           message: 'โปรดเลือกประเภทลูกค้า!',
                         },
                       ]}>
-                      <Input name='customer_type' placeholder='กรอกข้อมูล' value={addUser.customer_type} onChange={onValueChange} />
+                      <Select  placeholder='เลือกประเภทลูกค้า' >
+                        <Select.Option  value="ผู้เช่ารถ">ผู้เช่ารถ</Select.Option>
+                      </Select>
+                      {/* <Input name='customer_type' placeholder='กรอกข้อมูล' value={addUser.customer_type} onChange={onValueChange} /> */}
                     </Form.Item>
-                    <Form.Item 
-                    label='ประเภทสินค้า'
-                    name='product_type'
+                    <Form.Item
+                      label='ประเภทสินค้า'
+                      name='product_type'
                       rules={[
                         {
                           required: true,
@@ -186,9 +189,9 @@ function Home() {
                       <Input name='product_type' placeholder='กรอกข้อมูล' value={addUser.product_type} onChange={onValueChange} />
 
                     </Form.Item>
-                    <Form.Item 
-                    label='ยี่ห้อ'
-                    name='brand'
+                    <Form.Item
+                      label='ยี่ห้อ'
+                      name='brand'
                       rules={[
                         {
                           required: true,
@@ -197,9 +200,9 @@ function Home() {
                       ]}>
                       <Input name='brand' placeholder='กรอกข้อมูล' value={addUser.brand} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='รุ่น'
-                    name='model'
+                    <Form.Item
+                      label='รุ่น'
+                      name='model'
                       rules={[
                         {
                           required: true,
@@ -208,9 +211,9 @@ function Home() {
                       ]}>
                       <Input name='model' placeholder='กรอกข้อมูล' value={addUser.model} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ปีที่ผลิต'
-                    name='year'
+                    <Form.Item
+                      label='ปีที่ผลิต'
+                      name='year'
                       rules={[
                         {
                           required: true,
@@ -219,9 +222,9 @@ function Home() {
                       ]}>
                       <Input name='year' placeholder='กรอกข้อมูล' value={addUser.year} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ราคารถ'
-                    name='car_price'
+                    <Form.Item
+                      label='ราคารถ'
+                      name='car_price'
                       rules={[
                         {
                           required: true,
@@ -230,9 +233,9 @@ function Home() {
                       ]}>
                       <Input name='car_price' placeholder='กรอกข้อมูล' value={addUser.car_price} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='เลขทะเบียน'
-                    name='license_plate'
+                    <Form.Item
+                      label='เลขทะเบียน'
+                      name='license_plate'
                       rules={[
                         {
                           required: true,
@@ -244,9 +247,9 @@ function Home() {
                     <Form.Item label='ตัวอย่างรถ'>
                       <Button type='primary' onClick={() => { modal.info(config); }}>ดู</Button>
                     </Form.Item>
-                    <Form.Item 
-                    label='เพิ่มรูปภาพ'
-                    name='img'
+                    <Form.Item
+                      label='เพิ่มรูปภาพ'
+                      name='img'
                       rules={[
                         {
                           required: true,
@@ -259,9 +262,9 @@ function Home() {
                 </Col>
                 <Col className="gutter-row" span={12}>
                   <div>
-                    <Form.Item 
-                    label='ประเภท'
-                    name='type'
+                    <Form.Item
+                      label='ประเภท'
+                      name='type'
                       rules={[
                         {
                           required: true,
@@ -270,9 +273,9 @@ function Home() {
                       ]}>
                       <Input name='type' placeholder='กรอกข้อมูล' value={addUser.type} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ชื่อลูกค้า'
-                    name='customer_name'
+                    <Form.Item
+                      label='ชื่อลูกค้า'
+                      name='customer_name'
                       rules={[
                         {
                           required: true,
@@ -281,9 +284,9 @@ function Home() {
                       ]}>
                       <Input name='customer_name' placeholder='กรอกข้อมูล' value={addUser.customer_name} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ยอดที่ต้องการ'
-                    name='balance'
+                    <Form.Item
+                      label='ยอดที่ต้องการ'
+                      name='balance'
                       rules={[
                         {
                           required: true,
@@ -292,9 +295,9 @@ function Home() {
                       ]}>
                       <Input name='balance' placeholder='กรอกข้อมูล' value={addUser.balance} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='เลทรถ'
-                    name='rate'
+                    <Form.Item
+                      label='เลทรถ'
+                      name='rate'
                       rules={[
                         {
                           required: true,
@@ -303,9 +306,9 @@ function Home() {
                       ]}>
                       <Input name='rate' placeholder='กรอกข้อมูล' value={addUser.rate} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ยอดกู้สุทธิ'
-                    name='loan_amount'
+                    <Form.Item
+                      label='ยอดกู้สุทธิ'
+                      name='loan_amount'
                       rules={[
                         {
                           required: true,
@@ -314,9 +317,9 @@ function Home() {
                       ]}>
                       <Input name='loan_amount' placeholder='กรอกข้อมูล' value={addUser.loan_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='จำนวนผ่อน'
-                    name='installment_amount'
+                    <Form.Item
+                      label='จำนวนผ่อน'
+                      name='installment_amount'
                       rules={[
                         {
                           required: true,
@@ -325,9 +328,9 @@ function Home() {
                       ]}>
                       <Input name='installment_amount' placeholder='กรอกข้อมูล' value={addUser.installment_amount} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ดอกเบี้ยรวม'
-                    name='total_interest'
+                    <Form.Item
+                      label='ดอกเบี้ยรวม'
+                      name='total_interest'
                       rules={[
                         {
                           required: true,
@@ -336,9 +339,9 @@ function Home() {
                       ]}>
                       <Input name='total_interest' placeholder='กรอกข้อมูล' value={addUser.total_interest} onChange={onValueChange} />
                     </Form.Item>
-                    <Form.Item 
-                    label='ผ่อนรวมดอกเบี้ย'
-                    name='installment_with_interest'
+                    <Form.Item
+                      label='ผ่อนรวมดอกเบี้ย'
+                      name='installment_with_interest'
                       rules={[
                         {
                           required: true,

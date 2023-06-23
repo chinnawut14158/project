@@ -1,9 +1,11 @@
+import React from 'react'
+import Home from './Home'
+import { Navigatee, useNavigate } from 'react-router-dom'
+
 import {
-    // MenuFoldOutlined,
     UploadOutlined,
     UserOutlined,
     VideoCameraOutlined,
-    // MenuUnfoldOutlined,
     PlusCircleFilled,
     ScanOutlined,
     QuestionCircleFilled,
@@ -13,10 +15,11 @@ import {
 import { Button, Layout, Menu, theme, Space, Table, Tag, AutoComplete, Input, Col, Row, Select, Form, Tooltip } from 'antd';
 import { Footer } from 'antd/es/layout/layout';
 import { useState } from 'react';
-import React from 'react';
+
 
 const { Column, ColumnGroup } = Table;
 const { Header, Sider, Content } = Layout;
+
 
 const data = [
     {
@@ -56,14 +59,19 @@ const data = [
         info: 'test3',
     },
 ];
+const Check = () => {
+// function Check() {
 
-const ShowTable = () => {
+    let navigate = useNavigate()
+
     const {
         token: { colorBgContainer },
     } = theme.useToken();
+    
     return (
+        
         <Layout>
-            <Sider
+            {/* <Sider
                 breakpoint="lg"
                 collapsedWidth="0"
                 onBreakpoint={(broken) => {
@@ -72,9 +80,9 @@ const ShowTable = () => {
                 onCollapse={(collapsed, type) => {
                     console.log(collapsed, type);
                 }}
-            >
+            > */}
                 <div className="demo-logo-vertical" />
-                <Menu
+                {/* <Menu
                     theme="dark"
                     mode="inline"
                     defaultSelectedKeys={['4']}
@@ -86,7 +94,7 @@ const ShowTable = () => {
                         }),
                     )}
                 />
-            </Sider>
+            </Sider> */}
             <Layout>
                 <Header
                     style={{
@@ -178,7 +186,8 @@ const ShowTable = () => {
                     Ant Design ©2023 Created by Ant UED
                 </Footer>
             </Layout>
+            
         </Layout>
     );
 };
-export default ShowTable;
+export default Check

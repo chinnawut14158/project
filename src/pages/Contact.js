@@ -5,7 +5,7 @@ import {
     PlusOutlined, ArrowLeftOutlined, ArrowRightOutlined, SaveFilled, CloseSquareFilled, HomeFilled, UploadOutlined,
     UserOutlined, VideoCameraOutlined, PlusCircleFilled, ScanOutlined, QuestionCircleFilled, SearchOutlined
 } from '@ant-design/icons';
-import { Form, Input, Layout, Menu, Steps, theme, Col, Row, Select, Button, Space, Modal, Image, Table, Tag, AutoComplete } from 'antd';
+import { Form, Input, Layout, Menu, Steps, theme, Col, Row, Select, Button, Space, Modal, Image, Table, Tag, AutoComplete, Upload } from 'antd';
 import { Footer } from 'antd/es/layout/layout';
 
 const config = {
@@ -168,10 +168,11 @@ function Contact() {
                                 span: 8,
                             }}
                             wrapperCol={{
-                                span: 16,
+                                span: 14,
                             }}
                             style={{
-                                maxWidth: '90%',
+                                maxWidth: '100%',
+                                padding: 20
                             }}
                             form={form}
                             onFinish={onUserSubmit}>
@@ -299,7 +300,15 @@ function Contact() {
                                                     message: 'โปรดเพิ่มรูปภาพ!',
                                                 },
                                             ]}>
-                                            <Input name='img' placeholder='กรอกข้อมูล' value={addUser.img} onChange={onValueChange} type='file' />
+                                            {/* <Input name='img' placeholder='กรอกข้อมูล' value={addUser.img} onChange={onValueChange} type='file' /> */}
+                                            <Upload
+                                                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                                                listType="picture-card"
+                                                maxCount={3}
+                                                multiple
+                                            >
+                                            <Button type='ghost'><PlusOutlined /></Button>
+                                            </Upload>
                                         </Form.Item>
                                     </div>
                                 </Col>
@@ -404,19 +413,21 @@ function Contact() {
 
                             <div style={{
                                 // textAlign: 'center',
-                                margin: '0px 0px 0px 130px',
+                                // margin: '0px 0px 0px 130px',
+                                textAlign: 'center',
+
                             }}>
-                                <Row style={{ textAlign: 'center' }}>
+                                {/* <Row style={{ textAlign: 'center' }}>
                                     <Col span={8}></Col>
-                                    <Col span={8}>
-                                        <Space>
-                                            <Button type="primary" htmlType='submit' size="large" ><SaveFilled />บันทึก</Button>
-                                            <Button type="primary" size="large" onClick={onReset} ><CloseSquareFilled />ยกเลิก</Button>
-                                            <Button type="primary" size="large"><HomeFilled />หน้าหลัก</Button>
-                                        </Space>
-                                    </Col>
+                                    <Col span={8}> */}
+                                <Space>
+                                    <Button type="primary" htmlType='submit' size="large" ><SaveFilled />บันทึก</Button>
+                                    <Button type="primary" size="large" onClick={onReset} ><CloseSquareFilled />ยกเลิก</Button>
+                                    <Button type="primary" size="large"><HomeFilled />หน้าหลัก</Button>
+                                </Space>
+                                {/* </Col>
                                     <Col span={8}></Col>
-                                </Row>
+                                </Row> */}
                             </div>
 
                             {/* <Button block type='primary' htmlType='submit' >เพิ่ม</Button> */}
@@ -429,8 +440,8 @@ function Contact() {
                             >
                                 <Form.Item
                                     label='ยี่ห้อ'
-                                    name='test1'>
-                                    <Select defaultValue="เลือกยี่ห้อรถ">
+                                    name='test3'>
+                                    <Select placeholder='โปรดเลืกยี่ห้อรถ'>
                                         <Select.Option value="Toyota">Toyota</Select.Option>
                                         <Select.Option value="Isuzu">Isuzu</Select.Option>
                                         <Select.Option value="Honda">Honda</Select.Option>

@@ -130,7 +130,7 @@ const Check = () => {
                             background: colorBgContainer,
                         }}
                     >
-                        <Table dataSource={data}>
+                        <Table dataSource={allUser}>
                             <Column title="ลำดับ" dataIndex="key" key="key" />
                             <Column title="ชื่อ-สกุล" dataIndex="name" key="name" />
                             <Column title="ทะเบียน" dataIndex="license" key="license" />
